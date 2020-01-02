@@ -19,10 +19,13 @@
             font-weight: bolder;
         }
         #elm-1{
-            animation: 1s moveLeft;
+            /* animation: 3s moveLeft;
+            animation-direction: alternate-reverse;
+            animation-iteration-count: 2; */
         }
         #elm-2{
-            animation: 2s moveLeft;
+            animation: 3s moveLeft;
+            animation-timing-function: cubic-bezier(1,-0.02,1,-1.55);
         }
         #elm-3{
 
@@ -69,11 +72,20 @@
          */
 
          @keyframes moveLeft {
-             from{
+             0%{
                 transform: translateX(0);
              }
-             to{
-                transform: translateX(300px);
+             25%{
+                transform: translate(300px);
+             }
+             50%{
+                transform: translate(300px, 300px)
+             }
+             75%{
+                transform: translate(0, 300px)
+             }
+             100%{
+                transform: translate(0, 0)
              }
          }
     </style>
